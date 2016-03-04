@@ -320,8 +320,6 @@ education.display = function(){
 
    $('#education').append(HTMLonlineClasses);
 
-   
-
     for (online in education.onlineCourse) {
 
          $('#online-courses').append(HTMLonlineList);
