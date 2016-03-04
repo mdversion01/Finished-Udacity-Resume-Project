@@ -20,8 +20,21 @@ h6 {
 
 .education-entry,
 .work-entry,
-.project-entry {
+.project-entry,
+.online-list {
   padding: 0 5%;
+}
+
+.online-list {
+  column-count: 3;
+}
+
+.online {
+  margin-bottom: 10px;
+}
+
+.online a {
+  margin: 0 0 5px;
 }
 
 h1 {

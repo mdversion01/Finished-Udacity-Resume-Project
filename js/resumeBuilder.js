@@ -1,15 +1,15 @@
 var bio = {
     "name": "Mathew Daugherty",
     "role": " UX/UI/Graphic Designer & Front-End Developer",
-    "welcomeMessage": "Hello ...... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non egestas orci. Vestibulum dictum blandit finibus. Mauris et ex dictum, euismod eros sit amet, iaculis odio.",
+    "welcomeMessage": "Highly motivated and results-oriented UX/UI/Web designer and front-end developer with 16 years of experience in web design and graphics, front-end development (HTML/CSS), production, maintenance and architecture and 9 years of experience in designing UX/UI for web applications. Creative and quick learner that can work independently or with a team that has the ability to undertake and complete multiple projects at one time. Deadline driven and innovative thinker that does what it takes to get the job done. The main emphasis of my work has been design, style guides, and the look and feel of sites and/or applications and building out the HTML and CSS. Currently working on my Javascript/jQuery programming skills as well as trying to learn new javascript based frameworks.",
     "contacts": {
-        "mobile": "703.627.6663",
+        "mobile": "703.123.4567",
         "email": "mathewdaugherty@mac.com",
         "github": "mdversion01",
         "twitter": "@mdversion01",
         "location": "Reston, VA"
     },
-    "skills": ["Design", "HTML", "CSS", "Javascript"],
+    "skills": ["Design", "HTML", "CSS", "Bootstrap", "Javascript", "jQuery", "PHP", "MySQL", "Adobe Creative Suite", "508 Compliancy", "Agile/Scrum" ],
     "bioPic":"images/fry.jpg"
 };
 
@@ -97,6 +97,12 @@ var education = {
         "url": "http://www.udacity.com"
 	},
 	{
+        "title": "Intro to jQuery",
+        "school": "Udacity",
+        "dates": "2016",
+        "url": "http://www.udacity.com"
+    },
+    {
         "title": "Responsive Web Design Fundamentals",
         "school": "Udacity",
         "dates": "2015",
@@ -202,6 +208,18 @@ if (bio.skills.length > 0){
     
      $('#header').append(HTMLskillsStart);
 
+     $('#header').append(HTMLstartSkills);
+
+     for (skill in bio.skills) {
+
+         var formattedSkill = HTMLskills.replace("%data%",  bio.skills[skill]);
+
+         $('#skills').append(formattedSkill);
+
+     }
+
+     /*
+
      var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
 
      $('#skills').append(formattedSkill);
@@ -217,6 +235,8 @@ if (bio.skills.length > 0){
      var formattedSkill = HTMLskills.replace("%data%", bio.skills[3]);
 
      $('#skills').append(formattedSkill);
+
+     */
 
 }
 
@@ -300,9 +320,11 @@ education.display = function(){
 
    $('#education').append(HTMLonlineClasses);
 
+   
+
     for (online in education.onlineCourse) {
 
-         $('#education').append(HTMLschoolStart);
+         $('#online-courses').append(HTMLonlineList);
 
         var formatOnlTitle = HTMLonlineTitle.replace("%data%", education.onlineCourse[online].title);
 
@@ -310,15 +332,15 @@ education.display = function(){
 
         var titleSchool = formatOnlTitle + formatOnlSchool;
 
-        $('.education-entry:last').append(titleSchool);
+        $('.online:last').append(titleSchool);
 
         var formatOnlDate = HTMLonlineDates.replace("%data%", education.onlineCourse[online].dates);
 
-        $('.education-entry:last').append(formatOnlDate);
+        $('.online:last').append(formatOnlDate);
 
         var formatOnlUrl = HTMLonlineURL.replace("%data%", education.onlineCourse[online].url);
 
-        $('.education-entry:last').append(formatOnlUrl);
+        $('.online:last').append(formatOnlUrl);
     }
 
 }
@@ -417,3 +439,4 @@ function inName(name){
 }
 
 $('#main').append(internationalizeButton);
+
